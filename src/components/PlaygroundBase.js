@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import { FileTextFilled, FundFilled } from "@ant-design/icons";
@@ -42,3 +43,8 @@ export default function PlaygroundBase({ children, title }) {
     </Layout>
   );
 }
+
+PlaygroundBase.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+};

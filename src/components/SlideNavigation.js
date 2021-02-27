@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import { Button } from "antd";
 
 export default function SlideNavigation({
@@ -22,7 +23,7 @@ export default function SlideNavigation({
     return () => {
       document.removeEventListener("keyup", handleEventKeyboard);
     };
-  }, []);
+  }, [handleNextSlide, handlePreviousSlide]);
 
   return (
     <>
@@ -52,3 +53,11 @@ export default function SlideNavigation({
     </>
   );
 }
+
+SlideNavigation.propTypes = {
+  handleFullScreen: PropTypes.func.isRequired,
+  handlePreviousSlide: PropTypes.func.isRequired,
+  handleNextSlide: PropTypes.func.isRequired,
+  slideVisibleIndex: PropTypes.number.isRequired,
+  slideDataLength: PropTypes.number.isRequired,
+};

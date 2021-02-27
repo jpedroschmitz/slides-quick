@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Slide({ isFull, children }) {
   const style = {
@@ -25,3 +26,12 @@ export default function Slide({ isFull, children }) {
 
   return <div style={style} dangerouslySetInnerHTML={{ __html: data }}></div>;
 }
+
+Slide.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+    PropTypes.string,
+  ]).isRequired,
+  isFull: PropTypes.bool.isRequired,
+};

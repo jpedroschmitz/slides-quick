@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { List } from "antd";
+import List from "antd/lib/list";
 
 import Textarea from "../components/Textarea";
 import PlaygroundBase from "../components/PlaygroundBase";

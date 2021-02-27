@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Layout, Menu } from "antd";
+import Layout from "antd/lib/layout";
+import Menu from "antd/lib/menu";
 import { FileTextFilled, FundFilled } from "@ant-design/icons";
 
 const { Header, Content, Footer, Sider } = Layout;

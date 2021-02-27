@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Button } from "antd";
+import Button from "antd/lib/button";
 
 export default function SlideNavigation({
   handleFullScreen,

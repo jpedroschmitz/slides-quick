@@ -1,16 +1,15 @@
 import React from "react";
 import { BrowserRouter, Switch, Redirect, Route } from "react-router-dom";
 
-import Playground from "./pages/Playground";
-import PlaygroundSlides from "./pages/PlaygroundSlides";
+import Home from "./pages/Home";
+import Slides from "./pages/Slides";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Playground} />
-        <Route exact path="/playground" component={Playground} />
-        <Route exact path="/playground-slides" component={PlaygroundSlides} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/slides" component={Slides} />
         <Redirect from="*" to="/" />
       </Switch>
     </BrowserRouter>

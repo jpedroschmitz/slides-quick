@@ -30,6 +30,7 @@ export default function SlideNavigation({
       <Button
         type="primary"
         style={{ margin: "1rem 0" }}
+        disabled={slideDataLength === 0}
         onClick={handleFullScreen}
       >
         Slideshow

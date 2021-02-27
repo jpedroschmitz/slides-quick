@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { Link } from 'react-router-dom';
-import { FullScreen, useFullScreenHandle } from 'react-full-screen';
+import { Link } from "react-router-dom";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
-import SlideNavigation from '../../components/SlideNavigation/SlideNavigation';
-import PlaygroundBase from '../../components/PlaygroundBase/PlaygroundBase';
-import Slide from '../../components/Slide/Slide';
+import SlideNavigation from "../components/SlideNavigation";
+import PlaygroundBase from "../components/PlaygroundBase";
+import Slide from "../components/Slide";
 
 export default function PlaygroundSlides() {
   const handle = useFullScreenHandle();
   const [slideVisibleIndex, setSlideVisibleIndex] = useState(0);
-  const [slideData, setSlideData] = useState('');
+  const [slideData, setSlideData] = useState("");
 
   useEffect(() => {
-    const data = localStorage.getItem('@playground:text');
+    const data = localStorage.getItem("@playground:text");
 
     if (data) {
       setSlideData(JSON.parse(data));
@@ -30,7 +30,7 @@ export default function PlaygroundSlides() {
     }
   }
 
-  function handleNextSlides() {
+  function handleNextSlide() {
     if (slideVisibleIndex < slideData.length - 1) {
       setSlideVisibleIndex((prev) => prev + 1);
     }
@@ -54,9 +54,9 @@ export default function PlaygroundSlides() {
 
       {slideData && (
         <SlideNavigation
-          goFull={handleFullScreen}
-          goNext={handleNextSlides}
-          goPrev={handlePreviousSlide}
+          handleFullScreen={handleFullScreen}
+          handleNextSlide={handleNextSlide}
+          handlePreviousSlide={handlePreviousSlide}
           slideVisibleIndex={slideVisibleIndex}
           slideDataLength={slideData.length}
         />

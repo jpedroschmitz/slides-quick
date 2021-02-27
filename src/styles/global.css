@@ -1,16 +1,26 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
+
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background: #f2f3f5 !important;
+  color: #666666 !important;
+}
 
 h1 {
   font-size: 2.5rem;
+  color: #2e384d;
 }
 
 h2 {
   font-size: 2rem;
+  color: #2e384d;
 }
 
 h3 {
   font-size: 1.75rem;
-  color: #7f8fa6;
+  color: #2e384d;
   font-weight: bold;
 }
 
@@ -35,17 +45,23 @@ h6 {
 }
 
 .trigger:hover {
-  color: #1890ff;
+  color: #5965e0;
 }
 
 .logo {
-  line-height: 32px;
   text-align: center;
-  margin: 16px;
+  margin-top: 32px;
+  margin: 24px auto 40px auto;
+  width: 32px;
+  height: 28px;
 }
 
 .logo a {
-  color: rgba(255, 255, 255, 0.65) !important;
+  color: #e1e1e6 !important;
   text-decoration: none;
-  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.logo svg {
 }

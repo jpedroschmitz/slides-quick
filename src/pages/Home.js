@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import List from "antd/lib/list";
+import Steps from "antd/lib/steps";
 
 import Textarea from "../components/Textarea";
-import PlaygroundBase from "../components/PlaygroundBase";
+import Layout from "../components/Layout";
 
-const data = [
-  "- Paste your text or write it on the field above;",
-  "- Separate slides by paragraphs;",
-];
+const { Step } = Steps;
 
 export default function Playground() {
   const [textareaText, setTextareaText] = useState("");
@@ -30,21 +27,23 @@ export default function Playground() {
   }
 
   return (
-    <PlaygroundBase title="Playground - Slide Text">
+    <Layout title="Write">
       <Textarea
         placeholder="Paste or write your text here"
         changed={handleTextarea}
         text={textareaText}
       />
 
-      <List
-        size="large"
-        header={<div>Instructions:</div>}
-        bordered
-        style={{ margin: "24px 0" }}
-        dataSource={data}
-        renderItem={(item) => <List.Item>{item}</List.Item>}
-      />
-    </PlaygroundBase>
+      <Steps direction="vertical" current={0} style={{ marginTop: 40 }}>
+        <Step
+          title="Write"
+          description="Paste your text or write it on the field above. Separate slides by paragraphs."
+        />
+        <Step
+          title="Navigate"
+          description="Click on the slide page and you're ready to go."
+        />
+      </Steps>
+    </Layout>
   );
 }

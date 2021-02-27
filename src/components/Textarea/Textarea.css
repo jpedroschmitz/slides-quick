@@ -2,17 +2,12 @@
   overflow-y: auto;
 
   width: 100%;
-  min-width: 100%;
-  max-width: 100%;
-
-  border-radius: 4px;
+  max-width: 960px;
   border: 1px solid #d9d9d9;
 
-  max-height: 95vh;
-  min-height: 95vh;
-  height: 95vh;
-
+  min-height: 40vh;
+  max-height: 40vh;
+  height: 100%;
   padding: 1rem;
-
-  font-family: "Roboto Light", sans-serif;
+  font-family: "Roboto", sans-serif;
 }

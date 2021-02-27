@@ -5,8 +5,8 @@ export default function Slide({ isFull, children }) {
   const style = {
     backgroundColor: "#7f8fa6",
     color: "#FFFFFF",
-    width: "75vw",
-    height: "400px",
+    width: "960px",
+    height: "540px",
     padding: "1rem",
     textAlign: "center",
     fontSize: "3rem",
@@ -22,7 +22,7 @@ export default function Slide({ isFull, children }) {
     style.margin = "0";
   }
 
-  const data = children.replace(/[\n\r]/g, "<br>");
+  const data = children && children.replace(/[\n\r]/g, "<br>");
 
   return <div style={style} dangerouslySetInnerHTML={{ __html: data }}></div>;
 }
@@ -32,6 +32,6 @@ Slide.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
     PropTypes.string,
-  ]).isRequired,
+  ]),
   isFull: PropTypes.bool.isRequired,
 };
